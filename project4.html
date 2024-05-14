@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap');
+        
+        *{
+            box-sizing: border-box;
+         }
+
+         body{
+            background-image: url(back.svg);
+            background-size: cover;
+            font-family: 'poppins';
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow-x: hidden;
+         }
+
+         .box{
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 800px;
+            height: 400px;
+            margin: 20px;
+            border-radius: 20px;
+            transform: translateX(400%);
+            transition: transform 0.4s ease;
+            padding: 40px 75px 40px 75px
+         }
+
+         .box:nth-of-type(even){
+            transform: translateX(-400%);
+         }
+
+         .box.show{
+            transform: translateX(0);
+         }
+
+         p{
+            font-size: 20px;
+            text-align: center;
+         }
+
+         h2{
+            font-size: 35px;
+            padding: 0;
+            margin: 0;
+         }
+
+         section{
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+         }
+
+         header {
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            padding: 20px 0;
+        }       
+
+        .logo{
+            font-size: 20px;
+            margin: 10px;
+            margin-left: 50px;
+        }
+
+        nav ul {
+            list-style: none; 
+            padding: 0;
+            margin-right: 50px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px; 
+        }
+
+        nav ul li a {
+            color: black; 
+            text-decoration: none; 
+            font-size: 18px; 
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Aroundle
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#brand">Brand</a></li>
+                <li><a href="#client">Client</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+    <h4>service</h4>
+    <h2 style="font-size: 45px;">You can experience everything about<br> global market business at AROUNDLE.</h2>
+    </section>
+    <div class="box">
+        <h2>Brand Taking Off</h2>
+        <p>Aroundle strives to collaborate with you in crafting inventive brands and cultivating top-notch products, fostering symbiotic growth. Our mission is anchored in devising a potent global promotional strategy, seamlessly tailored to resonate across diverse markets. By marrying innovation with strategic localization, we transcend cultural boundaries, ensuring your brand's resonance with audiences worldwide. Our holistic approach encompasses meticulous market research.</p>
+    </div>
+    <div class="box">
+        <h2>Connecting the Influencer</h2>
+        <p>In tandem with influential social media personalities, Aroundle forges impactful collaborations to amplify customer engagement. Our extensive influencer network serves as a dynamic catalyst, enabling bespoke live commerce campaigns that breathe life into brand narratives. By harnessing the power of authentic connections, we infuse every interaction with resonance, fostering enduring brand loyalty. Through tailored strategies and seamless integration. </p>
+    </div>
+    <div class="box">
+        <h2>Platform</h2>
+        <p>Aroundle leverages diverse digital platforms for its global marketing endeavors. Our strategy encompasses live commerce events, offering real-time product showcases, alongside maintaining conventional online malls for seamless sales experiences. Through these initiatives, we ensure a dynamic presence in the digital sphere, catering to the evolving preferences of our worldwide audience while maximizing engagement and conversion opportunities.</p>
+    </div>
+    <div class="box">
+        <h2>Better Logistics</h2>
+        <p>In its global marketing endeavors, Aroundle employs a diverse array of digital platforms to maximize outreach and engagement. Through strategically curated live commerce events, we offer customers immersive experiences, showcasing products in real time and fostering direct interaction. Additionally, our commitment to seamless sales extends to traditional online malls, providing a convenient avenue for customers to explore and purchase products at their leisure.</p>
+    </div>
+    <div class="box">
+        <h2>Influencer Marketing</h2>
+        <p>In our quest for global marketing excellence, Aroundle harnesses a spectrum of internet platforms and promotional tools, strategically engaging with prominent Chinese influencers. Through strategic partnerships, we seamlessly integrate influencer marketing into our promotional efforts, ensuring maximum impact and resonance with the target audience. Our approach prioritizes efficiency and effectiveness. </p>
+    </div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+
+        window.addEventListener('scroll', checkBoxes);
+
+        function checkBoxes(){
+            const triggerBottom = window.innerHeight / 5 * 4;
+        
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+
+                if(boxTop < triggerBottom) {
+                    box.classList.add('show');
+                } else {
+                    box.classList.remove('show');
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>
